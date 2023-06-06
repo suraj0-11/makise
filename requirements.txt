@@ -1,0 +1,8 @@
+Pyrogram
+tgcrypto 
+redis
+anitopy
+psutil
+python-dotenv
+opencv-python
+telethon
