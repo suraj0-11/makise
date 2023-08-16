@@ -61,6 +61,19 @@ async def start_bot():
     #loop.run_untill_complete(start_bot())
 #rename_task.insert(0, "on")
 if __name__ == "__main__":
+    def run_speedtest():
+        st = speedtest.Speedtest()
+        st.get_best_server()
+        download_speed = st.download() / 1_000_000  # Convert to Mbps
+        upload_speed = st.upload() / 1_000_000      # Convert to Mbps
+        ping = st.results.ping
+        return f"Download: {download_speed:.2f} Mbps\nUpload: {upload_speed:.2f} Mbps\nPing: {ping} ms"
+        
+        @TGBot.on_message(filters.command("speed", prefixes=["/", "."]))
+    async def speed_test(bot, message):
+        result = run_speedtest()
+        await message.reply_text(result, quote=True)
+        
   @TGBot.on_message(filters.incoming & (filters.video | filters.document))
   async def wah_1_man(bot, message: Message):
     if mode_for_custom[0] == "off":
@@ -94,18 +107,7 @@ if __name__ == "__main__":
     await message.reply_text(OUT, quote=True)
     rename_task.insert(0, "on")
 
-def run_speedtest():
-    st = speedtest.Speedtest()
-    st.get_best_server()
-    download_speed = st.download() / 1_000_000  # Convert to Mbps
-    upload_speed = st.upload() / 1_000_000      # Convert to Mbps
-    ping = st.results.ping
-    return f"Download: {download_speed:.2f} Mbps\nUpload: {upload_speed:.2f} Mbps\nPing: {ping} ms"
-@TGBot.on_message(filters.command("speed", prefixes=["/", "."]))
-async def speed_test(bot, message):
-    result = run_speedtest()
-    await message.reply_text(result, quote=True)
-    
+  
   @TGBot.on_message(filters.incoming & filters.command("eval", prefixes=["/", "."]))
   async def help_eval_message(bot, message):
     if message.from_user.id not in Config.AUTH_USERS:
