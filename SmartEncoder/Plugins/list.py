@@ -6,9 +6,9 @@ Python3 --> list
 #from SmartEncoder.Database.db import myDB
 
 crf = []
-crf.append("29")
+crf.append("28")
 codec = []
-codec.append("libx265")
+codec.append("libx264")
 qualityy = []
 qualityy.append("846x480")
 audio_codec = []
@@ -26,7 +26,7 @@ audio.a_bitrate.append("45k")
 audio.a_codec.append("libopus")
 
 preset = []
-preset.append("medium")
+preset.append("preset")
 
 #speed.preset.append("fast")
 
