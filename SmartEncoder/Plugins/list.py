@@ -26,7 +26,7 @@ audio.a_bitrate.append("45k")
 audio.a_codec.append("libopus")
 
 preset = []
-preset.append("preset")
+preset.append("veryfast")
 
 #speed.preset.append("fast")
 
