@@ -19,7 +19,7 @@ class Config(object):
 Config.AUTH_USERS = [5585763218,5723565825]
 Config.API_ID = 3281305
 Config.API_HASH = "a9e62ec83fe3c22379e3e19195c8b3f6"
-Config.BOT_TOKEN = "5723565825:AAHarxi7BDdAkAxQ-NSPcCr9c1qnJLiCSZg"
+Config.BOT_TOKEN = "6124192107:AAFZVBavdjJ5UdZWtDpLHs9_Ochi4p9G2kA"
 Config.REDIS_HOST = "redis-19522.c8.us-east-1-4.ec2.cloud.redislabs.com" 
 #redis-14044.c91.us-east-1-3.ec2.cloud.redislabs.com
 Config.REDIS_PASS = "AB7X2pYjowMkLQqOuM1rhwmXqBgKoGpk"
