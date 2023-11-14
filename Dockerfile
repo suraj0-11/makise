@@ -9,8 +9,5 @@ RUN apt-get update \
   && wget https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n5.1-latest-linux64-gpl-5.1.tar.xz && tar -xvf *xz && cp *5.1/bin/* /usr/bin && rm -rf *xz && rm -rf *5.1 \
   && pip3 install --no-cache-dir -r requirements.txt
 
-RUN apk --no-cache add curl bash
-
-RUN curl -L https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz | tar -xJ -C /usr/local/bin --strip-components 1
 COPY . .
 CMD ["bash","start.sh"]
