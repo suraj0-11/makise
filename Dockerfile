@@ -6,7 +6,10 @@ RUN apt-get update \
   && apt-get install -y libglib2.0-0 libsm6 libxrender1 libxext6 \
   && apt-get install wget -y \
   && apt-get install xz-utils -y \
-  && wget https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n5.1-latest-linux64-gpl-5.1.tar.xz && tar -xvf *xz && cp *5.1/bin/* /usr/bin && rm -rf *xz && rm -rf *5.1 \
+  && wget -O ffmpeg.tar.xz "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz" \
+  && tar -xvf ffmpeg.tar.xz \
+  && cp ffmpeg-master-latest-linux64-gpl/bin/* /usr/bin \
+  && rm -rf ffmpeg.tar.xz ffmpeg-master-latest-linux64-gpl \
   && pip3 install --no-cache-dir -r requirements.txt
 COPY . .
-CMD ["bash","start.sh"]
+CMD ["bash", "start.sh"]
